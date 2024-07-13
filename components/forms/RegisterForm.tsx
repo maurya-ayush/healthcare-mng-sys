@@ -38,9 +38,9 @@ const RegisterForm = ({ user }: { user: User}) => {
   async function onSubmit(values: z.infer<typeof PatientFormValidation>) {
     setisLoading(true);
 
-    console.log(values)
-
     let formData;
+
+    console.log(values) // Debug log
 
     if(values.identificationDocument && values.identificationDocument.length > 0 ) {
       const blobFile = new Blob([values.identificationDocument[0]], {
